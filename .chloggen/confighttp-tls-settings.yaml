@@ -1,0 +1,22 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: confighttp
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (``).
+note: Add support for configuring TLS settings on HTTP server and client, including minimum/maximum TLS version, cipher suites, and client authentication mode.
+
+# One or more tracking issues related to the change
+issues: [9673]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  The `confighttp` package now exposes TLS configuration options for both HTTP
+  server and client components. Users can specify:
+  - `min_version` and `max_version` for TLS protocol version constraints
+  - `cipher_suites` to restrict allowed cipher suites
+  - `client_ca_file` for mutual TLS (mTLS) support on the server side
+  - `insecure_skip_verify` for disabling certificate verification on clients (not recommended for production)
