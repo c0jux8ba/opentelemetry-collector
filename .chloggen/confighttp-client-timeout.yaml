@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus, receiver/otlp
+component: confighttp
+
+# A brief description of the change. Surround your text with quotes ("" or '') if it needs to start with a backtick (`).
+note: Add configurable client-side timeout support to HTTP client configuration
+
+# One or more tracking issues related to the change
+issues: [9673]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  Adds a `timeout` field to `HTTPClientSettings` that allows users to configure
+  the HTTP client timeout directly via configuration. Previously, the timeout
+  could only be set programmatically after creating the HTTP client.
