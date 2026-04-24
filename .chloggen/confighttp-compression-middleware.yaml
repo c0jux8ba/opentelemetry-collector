@@ -1,0 +1,21 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: config/confighttp
+
+# A brief description of the change. Surpassing 80 chars is allowed only if there is no way to
+# make it shorter.
+note: Add support for configurable compression middleware in confighttp server settings
+
+# One or more tracking issues related to the change
+issues: [11234]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  Adds a new `compression` field to `ServerConfig` that allows users to configure
+  which compression algorithms are accepted by the HTTP server. Supported values
+  are `gzip`, `zstd`, `zlib`, `snappy`, and `deflate`. When not specified, the
+  server will accept all supported compression formats by default.
