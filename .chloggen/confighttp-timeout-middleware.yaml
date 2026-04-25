@@ -1,0 +1,21 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus, exporter/otlp, etc.
+component: confighttp
+
+# A brief description of the change. Surpassing 80 chars is allowed only if there is no way to
+# make it shorter.
+note: Add server-side request timeout middleware support to confighttp HTTP server settings
+
+# One or more tracking issues related to the change
+issues: [9673]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  Adds a new `ServerConfig` option to configure a request timeout middleware for HTTP servers.
+  When `Timeout` is set in `ServerConfig`, incoming requests that exceed the specified duration
+  will be automatically cancelled and a 503 Service Unavailable response will be returned.
+  This helps prevent resource exhaustion from long-running or stalled client connections.
