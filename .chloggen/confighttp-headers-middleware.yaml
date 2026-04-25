@@ -1,0 +1,21 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: confighttp
+
+# A brief description of the change. Surpassing 80 chars is allowed only if there is no way to
+# make it shorter.
+note: Add support for custom headers middleware in HTTP server configuration
+
+# One or more tracking issues related to the change
+issues: [9673]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  Adds a new `HeadersConfig` option to `HTTPServerSettings` that allows users to
+  configure custom response headers to be added to all HTTP responses. This is
+  useful for adding security headers (e.g. CORS, HSTS) or custom metadata headers
+  across all endpoints served by the collector's HTTP server.
