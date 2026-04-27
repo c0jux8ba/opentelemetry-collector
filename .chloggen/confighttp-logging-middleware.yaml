@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus, exporter/otlp, ...
+component: confighttp
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+description: Add logging middleware support to confighttp server, enabling structured request/response logging with configurable log level and request body capture.
+
+# One or more tracking issues related to the change
+issues: [9712]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+notes: |
+  The logging middleware can be enabled via the `ServerConfig` and supports
+  configuring the log level, whether to log request headers, and whether to
+  capture request/response bodies for debugging purposes.
