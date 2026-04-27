@@ -1,0 +1,22 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus, exporter/otlp, ...
+component: confighttp
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+Note: |
+  Add `read_timeout` configuration option to `confighttp.ServerConfig` to allow users to set the
+  maximum duration for reading the entire HTTP request, including the body. This helps prevent
+  slow client attacks and resource exhaustion by enforcing a deadline on incoming request reads.
+
+# One or more tracking issues related to the change
+issues: [9673]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  The `read_timeout` field maps directly to `http.Server.ReadTimeout`. If not set, the server
+  will use Go's default behavior (no timeout). It is recommended to set this value in production
+  environments to guard against slow loris attacks.
