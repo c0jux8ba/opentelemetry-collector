@@ -1,0 +1,20 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus, exporter/otlp, ...
+component: confighttp
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (``).
+short_description: Add write timeout support to HTTP server settings
+
+# One or more tracking issues related to the change
+issues: []
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+additional_details: |
+  Adds `WriteTimeout` field to `HTTPServerSettings` to allow configuring the
+  maximum duration before timing out writes of the HTTP response. This complements
+  the existing `ReadTimeout` and `ReadHeaderTimeout` fields for more complete
+  HTTP server timeout configuration.
