@@ -1,0 +1,19 @@
+# One of 'breaking', 'deprecation', 'new_component', 'enhancement', 'bug_fix'
+change_type: enhancement
+
+# The name of the component, e.g. receiver/prometheus
+component: confighttp
+
+# A brief description of the change. Surround your text with quotes ("...") if it needs to start with a backtick (`)
+note: Add CORS middleware support to confighttp server settings
+
+# One or more tracking issues related to the change
+issues: [10XXXX]
+
+# (Optional) One or more lines of additional information to render under the primary note.
+# These lines will be padded with 2 spaces and then inserted directly into the changelog.
+# Use pipe (|) for multiline entries.
+subtext: |
+  Adds a new CORSConfig struct to HTTPServerSettings that allows users to configure
+  Cross-Origin Resource Sharing (CORS) headers for HTTP servers. This includes support
+  for allowed origins, allowed headers, and max age settings.
